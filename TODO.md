@@ -6,7 +6,7 @@
 
 - Home:
 
-  - Only a few products should be there (something like the most popular or the newest)
+  - (Partially done) Only a few products should be there (something like the most popular or the newest)
     other products must have its own page. Just to keep the landing page simple.
   - A description about "who we are and what we do".
 

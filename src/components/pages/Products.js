@@ -1,8 +1,12 @@
 import React from "react";
+import { AllCards } from "../cards/Cards";
+
 import "../../App.css";
 
-function Products() {
-  return <h1 className="products">Products</h1>;
+export default function Products() {
+  return (
+    <>
+      <AllCards />
+    </>
+  );
 }
-
-export default Products;
