@@ -1,0 +1,32 @@
+export const hoodies = [
+  {
+    id: 4,
+    brand: "Piece of 8",
+    description: "Short description",
+    label: "jacket",
+    name: "The lovers Jacket",
+    path: "/tees",
+    price: 37.95,
+    src: "/images/hoodies/h1.PNG",
+  },
+  {
+    id: 5,
+    brand: "Piece of 8",
+    description: "Short description",
+    label: "tee",
+    name: "The lovers Hoodie",
+    path: "/tees",
+    price: 37.95,
+    src: "/images/hoodies/h2.PNG",
+  },
+  {
+    id: 6,
+    brand: "Piece of 8",
+    description: "Short description",
+    label: "tee",
+    name: "Piece of 8 Hoodie",
+    path: "/tees",
+    price: 37.95,
+    src: "/images/hoodies/h3.PNG",
+  },
+];
