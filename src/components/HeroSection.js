@@ -8,10 +8,10 @@ function HeroSection() {
     <div
       className="hero-container"
       style={{
-        backgroundImage: "url(/images/background/bg1.png)",
+        backgroundImage: "url(/images/background/bg2.jpg)",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "center center",
+        backgroundPosition: "top 30% center",
       }}
     >
       {/*<video src="/videos/video-2.mp4" autoPlay loop muted */}
