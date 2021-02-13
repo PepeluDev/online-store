@@ -26,7 +26,15 @@ const productsSection = (tittle, products) => {
   );
 };
 
-function Cards() {
+export function TopCards() {
+  return (
+    <div className="cards">
+      {productsSection("Most Wanted!", [tees[0], hoodies[0], prints[0]])}
+    </div>
+  );
+}
+
+export function AllCards() {
   return (
     <div className="cards">
       {productsSection("Check out these cool tees!", tees)}
@@ -36,5 +44,3 @@ function Cards() {
     </div>
   );
 }
-
-export default Cards;
