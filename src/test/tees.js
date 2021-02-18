@@ -24,10 +24,10 @@ export const tees = [
     brand: "Piece of 8",
     description: "Short description",
     label: "tee",
-    name: "Burning Churches Withe",
+    name: "Burning Churches White",
     path: "/tees",
     price: 17.95,
-    src: "/images/tees/t3.jpeg",
+    src: "/images/tees/t3.PNG",
   },
   {
     id: 4,
@@ -38,5 +38,15 @@ export const tees = [
     path: "/tees",
     price: 17.95,
     src: "/images/tees/t4.jpeg",
+  },
+  {
+    id: 10,
+    brand: "Piece of 8",
+    description: "Short description",
+    label: "tee",
+    name: "Corpus Christi Black",
+    path: "/tees",
+    price: 17.95,
+    src: "/images/tees/t5.PNG",
   },
 ];
