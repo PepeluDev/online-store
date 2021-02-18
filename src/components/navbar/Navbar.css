@@ -19,6 +19,7 @@
 }
 
 .navbar-logo {
+  font-family: "Courier New", Courier, monospace;
   color: #fff;
   justify-self: start;
   margin-left: 20px;
@@ -50,6 +51,7 @@
 }
 
 .nav-links {
+  font-family: "Courier New", Courier, monospace;
   color: #fff;
   display: flex;
   align-items: center;
@@ -119,6 +121,9 @@
 
   .navbar-logo {
     position: absolute;
+    font-size: 4vh;
+    margin-right: 7px;
+    margin-left: auto;
     top: 0;
     left: 0;
     transform: translate(25%, 50%);

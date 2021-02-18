@@ -32,8 +32,7 @@ export default function Navbar() {
       <nav className="navbar">
         <div className="navbar-container">
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-            <i className="ri-copper-diamond-line" />
-            Piece of eight
+            Piece of Eight
           </Link>
           <div className="menu-icon" onClick={() => handleClick()}>
             <i className={iconClick ? "ri-close-fill" : "ri-menu-line"}></i>
