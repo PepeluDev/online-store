@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Button from "../button/Button";
+import Logo from "../logo/Logo";
 
 import "./Footer.css";
 
@@ -65,10 +66,10 @@ function Footer() {
         <div className="social-media-wrap">
           <div className="footer-logo">
             <Link to="/" className="social-logo">
-              Po8 <i class="ri-copper-diamond-line" />
+              <Logo logoStyle="logo__img__small" />
             </Link>
           </div>
-          <small className="website-rights">Po8 ® 2021</small>
+          <small className="website-rights">Piece of Eigth ® 2021</small>
           <div className="social-icons">
             <Link
               to="/"
