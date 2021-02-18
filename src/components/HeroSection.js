@@ -2,6 +2,7 @@ import React from "react";
 import "../App.css";
 import Button from "./button/Button";
 import "./HeroSection.css";
+import Logo from "./logo/Logo";
 
 function HeroSection() {
   return (
@@ -15,7 +16,7 @@ function HeroSection() {
       }}
     >
       {/*<video src="/videos/video-2.mp4" autoPlay loop muted */}
-      <h1>INK AWAITS</h1>
+      <Logo logoStyle="logo__img__medium" />
       <p>UNDER CONSTRUCTION</p>
       <div className="hero-btns">
         <Button
