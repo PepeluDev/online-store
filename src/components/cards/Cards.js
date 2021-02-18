@@ -29,7 +29,7 @@ const productsSection = (tittle, products) => {
 export function TopCards() {
   return (
     <div className="cards">
-      {productsSection("Most Wanted!", [tees[0], hoodies[0], prints[0]])}
+      {productsSection("Lucifer’s choice", [tees[0], tees[2], tees[4]])}
     </div>
   );
 }
