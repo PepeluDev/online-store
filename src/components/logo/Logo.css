@@ -1,0 +1,34 @@
+.logo__img {
+  width: auto;
+  border-style: solid;
+  border-color: #fff;
+  margin: 10px;
+}
+
+.logo__img__small {
+  height: 7vh;
+}
+
+.logo__img__medium {
+  height: 25vh;
+}
+
+.logo__img__big {
+  height: 50vh;
+}
+
+.logo__text {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  visibility: hidden;
+}
+
+@media only screen and (max-width: 481px) {
+  .logo__img {
+    width: auto;
+    align-self: center;
+  }
+  .logo__text {
+    visibility: hidden;
+  }
+}
