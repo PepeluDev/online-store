@@ -2,7 +2,8 @@ export const tees = [
   {
     id: 0,
     brand: "Piece of 8",
-    description: "Short description",
+    description:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, harum mollitia. Corrupti totam corporis accusamus beatae et dolorum. Molestias necessitatibus debitis explicabo optio maxime, adipisci aliquid at nesciunt odit officia.",
     label: "tee",
     name: "The lovers Black",
     path: "/tees",
@@ -12,7 +13,8 @@ export const tees = [
   {
     id: 1,
     brand: "Piece of 8",
-    description: "Short description",
+    description:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, harum mollitia. Corrupti totam corporis accusamus beatae et dolorum. Molestias necessitatibus debitis explicabo optio maxime, adipisci aliquid at nesciunt odit officia.",
     label: "tee",
     name: "The lovers White",
     path: "/tees",
@@ -22,7 +24,8 @@ export const tees = [
   {
     id: 2,
     brand: "Piece of 8",
-    description: "Short description",
+    description:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, harum mollitia. Corrupti totam corporis accusamus beatae et dolorum. Molestias necessitatibus debitis explicabo optio maxime, adipisci aliquid at nesciunt odit officia.",
     label: "tee",
     name: "Burning Churches White",
     path: "/tees",
@@ -32,7 +35,8 @@ export const tees = [
   {
     id: 4,
     brand: "Piece of 8",
-    description: "Short description",
+    description:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, harum mollitia. Corrupti totam corporis accusamus beatae et dolorum. Molestias necessitatibus debitis explicabo optio maxime, adipisci aliquid at nesciunt odit officia.",
     label: "tee",
     name: "Japan Memories White",
     path: "/tees",
@@ -42,7 +46,8 @@ export const tees = [
   {
     id: 10,
     brand: "Piece of 8",
-    description: "Short description",
+    description:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, harum mollitia. Corrupti totam corporis accusamus beatae et dolorum. Molestias necessitatibus debitis explicabo optio maxime, adipisci aliquid at nesciunt odit officia.",
     label: "tee",
     name: "Corpus Christi Black",
     path: "/tees",

@@ -12,7 +12,7 @@ h1 {
   flex-flow: column;
   align-items: center;
   max-width: 1120px;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -22,12 +22,13 @@ h1 {
 }
 
 .cards__items {
-  margin-bottom: 24px;
+  margin-bottom: 11px;
 }
 
 .cards__item {
   display: flex;
   flex: 1;
+  width: 20vw;
   margin: 0 1rem;
   border-radius: 10px;
 }
@@ -92,8 +93,15 @@ h1 {
 
 .cards__item__info {
   padding: 20px 30px 30px;
-  display: flex;
-  justify-content: space-between;
+  max-width: 500px;
+  align-self: center;
+  text-align: center;
+}
+.cards__item__info > p {
+  font-size: 14px;
+  color: #252e48;
+  line-height: 150%;
+  margin: 1rem 1rem;
 }
 
 .cards__item__text {
@@ -117,6 +125,7 @@ h1 {
 @media only screen and (max-width: 1024px) {
   .cards__item {
     margin-bottom: 2rem;
+    width: 90vw;
   }
 }
 
