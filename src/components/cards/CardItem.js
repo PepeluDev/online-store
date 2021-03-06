@@ -59,6 +59,8 @@ function CardItem({
               <h5 className="cards__item__text">{name}</h5>
             </Link>
             <p>{description}</p>
+            {/* TODO currency must be selected depending on country */}
+            <span>{price} euro</span>{" "}
             <div className="cards__item__form">
               <form>
                 {(label === "tee" ||
