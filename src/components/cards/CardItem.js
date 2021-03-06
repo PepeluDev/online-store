@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "../button/Button";
 
 import Popup from "reactjs-popup";
+
+function sizeSelector(availableSizes, onChange) {
+  return (
+    <select
+      name="cars"
+      id="cars"
+      onChange={(e) => {
+        e.preventDefault();
+        onChange(e.target.value);
+      }}
+    >
+      {availableSizes.map((s) => {
+        return <option value={s}>{s}</option>;
+      })}
+    </select>
+  );
+}
 
 function CardItem({
   id,
@@ -12,9 +29,12 @@ function CardItem({
   name,
   path,
   price,
+  sizes,
   src,
   text,
 }) {
+  const [size, setSize] = useState("default");
+
   return (
     <>
       <li className="cards__item">
@@ -39,9 +59,25 @@ function CardItem({
               <h5 className="cards__item__text">{name}</h5>
             </Link>
             <p>{description}</p>
-            <Button buttonStyle="btn--secondary" buttonSize="btn--small">
-              Add to cart
-            </Button>
+            <div className="cards__item__form">
+              <form>
+                {(label === "tee" ||
+                  label === "hoodie" ||
+                  label === "jacket") &&
+                  sizeSelector(sizes, setSize)}
+                <Button
+                  buttonStyle="btn--secondary"
+                  buttonSize="btn--small"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    console.log(size);
+                    // Addd to cart will be here
+                  }}
+                >
+                  Add to cart
+                </Button>
+              </form>
+            </div>
           </div>
         </div>
       </li>

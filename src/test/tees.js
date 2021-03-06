@@ -8,6 +8,7 @@ export const tees = [
     name: "The lovers Black",
     path: "/tees",
     price: 17.95,
+    sizes: ["S", "M", "L", "XL", "XXL"],
     src: "/images/tees/t1.PNG",
   },
   {
@@ -19,6 +20,7 @@ export const tees = [
     name: "The lovers White",
     path: "/tees",
     price: 17.95,
+    sizes: ["S", "M", "L", "XL", "XXL"],
     src: "/images/tees/t2.PNG",
   },
   {
@@ -30,6 +32,7 @@ export const tees = [
     name: "Burning Churches White",
     path: "/tees",
     price: 17.95,
+    sizes: ["S", "M", "L", "XL", "XXL"],
     src: "/images/tees/t3.PNG",
   },
   {
@@ -41,6 +44,7 @@ export const tees = [
     name: "Japan Memories White",
     path: "/tees",
     price: 17.95,
+    sizes: ["S", "M", "L", "XL", "XXL"],
     src: "/images/tees/t4.jpeg",
   },
   {
@@ -52,6 +56,7 @@ export const tees = [
     name: "Corpus Christi Black",
     path: "/tees",
     price: 17.95,
+    sizes: ["S", "M", "L", "XL", "XXL"],
     src: "/images/tees/t5.PNG",
   },
 ];
