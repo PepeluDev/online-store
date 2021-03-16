@@ -29,7 +29,7 @@ function Footer() {
       </section>
       <div className="footer-links">
         <div className="footer-links-wrapper">
-          <div class="footer-links-items">
+          <div className="footer-links-items">
             <h2>About Us</h2>
             <Link to="/sign-up">How it works</Link>
             <Link to="/">Testimonials</Link>
@@ -37,7 +37,7 @@ function Footer() {
             <Link to="/">Investors</Link>
             <Link to="/">Terms of Service</Link>
           </div>
-          <div class="footer-links-items">
+          <div className="footer-links-items">
             <h2>Contact Us</h2>
             <Link to="/">Contact</Link>
             <Link to="/">Support</Link>
@@ -46,14 +46,14 @@ function Footer() {
           </div>
         </div>
         <div className="footer-links-wrapper">
-          <div class="footer-links-items">
+          <div className="footer-links-items">
             <h2>Videos</h2>
             <Link to="/">Submit Video</Link>
             <Link to="/">Ambassadors</Link>
             <Link to="/">Agency</Link>
             <Link to="/">Influencer</Link>
           </div>
-          <div class="footer-links-items">
+          <div className="footer-links-items">
             <h2>Social Media</h2>
             <Link to="/">Instagram</Link>
             <Link to="/">Facebook</Link>
@@ -62,7 +62,7 @@ function Footer() {
           </div>
         </div>
       </div>
-      <section className0="social-media">
+      <section className="social-media">
         <div className="social-media-wrap">
           <div className="footer-logo">
             <Link to="/" className="social-logo">
@@ -77,7 +77,7 @@ function Footer() {
               className="social-icon-link facebook"
               aria-label="Facebook"
             >
-              <i class="ri-facebook-box-line" />
+              <i className="ri-facebook-box-line" />
             </Link>
             <Link
               to="/"
@@ -85,7 +85,7 @@ function Footer() {
               className="social-icon-link instagram"
               aria-label="Instagram"
             >
-              <i class="ri-instagram-line" />
+              <i className="ri-instagram-line" />
             </Link>
             <Link
               to="/"
@@ -93,7 +93,7 @@ function Footer() {
               className="social-icon-link twitter"
               aria-label="Twitter"
             >
-              <i class="ri-twitter-line" />
+              <i className="ri-twitter-line" />
             </Link>
           </div>
         </div>
