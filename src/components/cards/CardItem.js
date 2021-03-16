@@ -1,24 +1,58 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import Button from "../button/Button";
 
+import Carousel from "react-material-ui-carousel";
 import Popup from "reactjs-popup";
 
 function sizeSelector(availableSizes, onChange) {
   return (
     <select
-      name="cars"
-      id="cars"
+      name="sizes"
       onChange={(e) => {
         e.preventDefault();
         onChange(e.target.value);
       }}
     >
       {availableSizes.map((s) => {
-        return <option value={s}>{s}</option>;
+        return (
+          <option key={s} value={s}>
+            {s}
+          </option>
+        );
       })}
     </select>
   );
+}
+
+function ProductFigure({ src, label }) {
+  return (
+    <figure className="cards__item__pic-wrap" data-category={label}>
+      <Popup
+        modal
+        closeOnDocumentClick
+        trigger={
+          <img src={src} alt="SOME_IMAGE" className="cards__item__img" />
+        }
+      >
+        <img src={src} alt="SOME_IMAGE" className="cards__item__img__popup" />
+      </Popup>
+    </figure>
+  );
+}
+
+function ProductCarousel({ picsSrc, label }) {
+  if (picsSrc.length === 1) {
+    return <ProductFigure src={picsSrc[0]} label={label} />;
+  } else {
+    let id = 1;
+    return (
+      <Carousel autoPlay={false}>
+        {picsSrc.map((src) => {
+          return <ProductFigure key={id++} src={src} label={label} />;
+        })}
+      </Carousel>
+    );
+  }
 }
 
 function CardItem({
@@ -39,25 +73,9 @@ function CardItem({
     <>
       <li className="cards__item">
         <div className="cards__item__link">
-          <figure className="cards__item__pic-wrap" data-category={label}>
-            <Popup
-              modal
-              closeOnDocumentClick
-              trigger={
-                <img src={src} alt="SOME_IMAGE" className="cards__item__img" />
-              }
-            >
-              <img
-                src={src}
-                alt="SOME_IMAGE"
-                className="cards__item__img__popup"
-              />
-            </Popup>
-          </figure>
+          <ProductCarousel picsSrc={src} label={label} />
           <div className="cards__item__info">
-            <Link to={path}>
-              <h5 className="cards__item__text">{name}</h5>
-            </Link>
+            <h5 className="cards__item__text">{name}</h5>
             <p>{description}</p>
             {/* TODO currency must be selected depending on country */}
             <span>{price} euro</span>{" "}

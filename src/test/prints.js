@@ -7,7 +7,7 @@ export const prints = [
     name: "Corpus Christi White",
     path: "/tees",
     price: 11.95,
-    src: "/images/prints/p1.jpeg",
+    src: ["/images/prints/p1.jpeg"],
   },
   {
     id: 8,
@@ -17,6 +17,6 @@ export const prints = [
     name: "The lovers Black",
     path: "/tees",
     price: 11.95,
-    src: "/images/prints/p2.jpeg",
+    src: ["/images/prints/p2.jpeg"],
   },
 ];

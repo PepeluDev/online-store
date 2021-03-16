@@ -9,7 +9,7 @@ export const hoodies = [
     path: "/tees",
     price: 37.95,
     sizes: ["S", "M", "L", "XL", "XXL"],
-    src: "/images/hoodies/h1.PNG",
+    src: ["/images/hoodies/h1.PNG"],
   },
   {
     id: 5,
@@ -21,7 +21,7 @@ export const hoodies = [
     path: "/tees",
     price: 37.95,
     sizes: ["S", "M", "L", "XL", "XXL"],
-    src: "/images/hoodies/h2.PNG",
+    src: ["/images/hoodies/h2.PNG"],
   },
   {
     id: 6,
@@ -33,6 +33,6 @@ export const hoodies = [
     path: "/tees",
     price: 37.95,
     sizes: ["S", "M", "L", "XL", "XXL"],
-    src: "/images/hoodies/h3.PNG",
+    src: ["/images/hoodies/h3.PNG"],
   },
 ];

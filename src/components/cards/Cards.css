@@ -28,7 +28,7 @@ h1 {
 .cards__item {
   display: flex;
   flex: 1;
-  width: 20vw;
+  width: 30vw;
   margin: 0 1rem;
   border-radius: 10px;
 }

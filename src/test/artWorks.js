@@ -7,6 +7,6 @@ export const artWorks = [
     name: "Special Artwork",
     path: "/tees",
     price: 999,
-    src: "/images/artWorks/art1.jpeg",
+    src: ["/images/artWorks/art1.jpeg"],
   },
 ];

@@ -31,8 +31,9 @@ const productsSection = (tittle, products) => {
     <>
       <h1>{tittle}</h1>
       {products.map((chunck) => {
+        let id = 1;
         return (
-          <div className="cards__container">
+          <div key={id++} className="cards__container">
             <div className="cards__wrapper">
               <ul className="cards__items">
                 {chunck.map((product) => {

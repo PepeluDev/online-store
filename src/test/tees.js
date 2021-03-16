@@ -9,7 +9,7 @@ export const tees = [
     path: "/tees",
     price: 17.95,
     sizes: ["S", "M", "L", "XL", "XXL"],
-    src: "/images/tees/t1.PNG",
+    src: ["/images/tees/t1.PNG", "/images/prints/p2.jpeg"],
   },
   {
     id: 1,
@@ -21,7 +21,7 @@ export const tees = [
     path: "/tees",
     price: 17.95,
     sizes: ["S", "M", "L", "XL", "XXL"],
-    src: "/images/tees/t2.PNG",
+    src: ["/images/tees/t2.PNG", "/images/prints/p2.jpeg"],
   },
   {
     id: 2,
@@ -33,7 +33,7 @@ export const tees = [
     path: "/tees",
     price: 17.95,
     sizes: ["S", "M", "L", "XL", "XXL"],
-    src: "/images/tees/t3.PNG",
+    src: ["/images/tees/t3.PNG"],
   },
   {
     id: 4,
@@ -45,7 +45,7 @@ export const tees = [
     path: "/tees",
     price: 17.95,
     sizes: ["S", "M", "L", "XL", "XXL"],
-    src: "/images/tees/t4.jpeg",
+    src: ["/images/tees/t4.jpeg"],
   },
   {
     id: 10,
@@ -57,6 +57,6 @@ export const tees = [
     path: "/tees",
     price: 17.95,
     sizes: ["S", "M", "L", "XL", "XXL"],
-    src: "/images/tees/t5.PNG",
+    src: ["/images/tees/t5.PNG", "/images/prints/p1.jpeg"],
   },
 ];
