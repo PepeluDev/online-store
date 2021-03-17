@@ -1,9 +1,9 @@
 import React from "react";
 import "../../App.css";
-import { TopCards } from "../cards/Cards";
 import HeroSection from "../HeroSection";
 
-export default function Home() {
+export default function Home(props) {
+  const { TopCards } = props;
   return (
     <>
       <HeroSection />

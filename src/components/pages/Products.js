@@ -1,9 +1,9 @@
 import React from "react";
-import { AllCards } from "../cards/Cards";
 
 import "../../App.css";
 
-export default function Products() {
+export default function Products(props) {
+  const { AllCards } = props;
   return (
     <>
       <AllCards />

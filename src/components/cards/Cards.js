@@ -3,11 +3,6 @@ import CardItem from "./CardItem";
 
 import "./Cards.css";
 
-// import { artWorks } from "../../test/artWorks";
-import { hoodies } from "../../test/hoodies";
-// import { prints } from "../../test/prints";
-import { tees } from "../../test/tees";
-
 function chunkArray(myArray, chunk_size) {
   var index = 0;
   var arrayLength = myArray.length;
@@ -20,11 +15,6 @@ function chunkArray(myArray, chunk_size) {
 
   return tempArray;
 }
-
-const teesChunk = chunkArray(tees, 3);
-const hoodiesChunk = chunkArray(hoodies, 3);
-//const printsChunk = chunkArray(prints, 3);
-//const artWorksChunk = chunkArray(artWorks, 3);
 
 const productsSection = (tittle, products) => {
   return (
@@ -49,7 +39,16 @@ const productsSection = (tittle, products) => {
   );
 };
 
-export function TopCards() {
+export function TopCards(props) {
+  const { products } = props.context;
+  const tees = products.filter(function (product) {
+    return product.label === "tee";
+  });
+  if (tees.length === 0) {
+    // TODO wait for the async fetching: This won't be
+    // needed in the future when the rating is implemented
+    return <></>;
+  }
   return (
     <div className="cards">
       {productsSection("Lucifer’s choice", [[tees[0], tees[2], tees[1]]])}
@@ -57,13 +56,25 @@ export function TopCards() {
   );
 }
 
-export function AllCards() {
+export function AllCards(props) {
+  const { products } = props.context;
+  const tees = chunkArray(
+    products.filter(function (product) {
+      return product.label === "tee";
+    }),
+    3
+  );
+  const hoodies = chunkArray(
+    products.filter(function (product) {
+      return product.label === "hoodie" || product.label === "jacket";
+    }),
+    3
+  );
+
   return (
     <div className="cards">
-      {productsSection("Check out these cool tees!", teesChunk)}
-      {productsSection("Check out these cool hoodies!", hoodiesChunk)}
-      {/*productsSection("Check out these cool prints!", printsChunk)*/}
-      {/*productsSection("Check out these special artworks!", artWorksChunk)*/}
+      {productsSection("Check out these cool tees!", tees)}
+      {productsSection("Check out these cool hoodies!", hoodies)}
     </div>
   );
 }
