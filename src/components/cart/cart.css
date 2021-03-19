@@ -1,0 +1,40 @@
+.cart__buttons {
+  margin: 5px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cart__header {
+  margin-top: 20px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.cart__total {
+  text-align: center;
+}
+
+.cart__items {
+  margin: 10px;
+  padding: 10px;
+}
+
+.cart__item {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid lightblue;
+}
+
+.cart__item__buttons {
+  display: flex;
+}
+
+.cart__item__img {
+  max-width: 80px;
+}
+
+.cart__item__information {
+  display: flex;
+  justify-content: space-between;
+}

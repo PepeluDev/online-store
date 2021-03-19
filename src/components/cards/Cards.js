@@ -16,7 +16,7 @@ function chunkArray(myArray, chunk_size) {
   return tempArray;
 }
 
-const productsSection = (tittle, products) => {
+const productsSection = (tittle, products, addToCart) => {
   return (
     <>
       <h1>{tittle}</h1>
@@ -27,7 +27,13 @@ const productsSection = (tittle, products) => {
             <div className="cards__wrapper">
               <ul className="cards__items">
                 {chunck.map((product) => {
-                  return <CardItem {...product} key={product.id} />;
+                  return (
+                    <CardItem
+                      {...product}
+                      key={product.id}
+                      addToCart={addToCart}
+                    />
+                  );
                 })}
               </ul>
               <ul className="cards__items"></ul>
@@ -40,7 +46,7 @@ const productsSection = (tittle, products) => {
 };
 
 export function TopCards(props) {
-  const { products } = props.context;
+  const { products, addToCart } = props.context;
   const tees = products.filter(function (product) {
     return product.label === "tee";
   });
@@ -51,13 +57,17 @@ export function TopCards(props) {
   }
   return (
     <div className="cards">
-      {productsSection("Lucifer’s choice", [[tees[0], tees[2], tees[1]]])}
+      {productsSection(
+        "Lucifer’s choice",
+        [[tees[0], tees[2], tees[1]]],
+        addToCart
+      )}
     </div>
   );
 }
 
 export function AllCards(props) {
-  const { products } = props.context;
+  const { products, addToCart } = props.context;
   const tees = chunkArray(
     products.filter(function (product) {
       return product.label === "tee";
@@ -73,8 +83,8 @@ export function AllCards(props) {
 
   return (
     <div className="cards">
-      {productsSection("Check out these cool tees!", tees)}
-      {productsSection("Check out these cool hoodies!", hoodies)}
+      {productsSection("Check out these cool tees!", tees, addToCart)}
+      {productsSection("Check out these cool hoodies!", hoodies, addToCart)}
     </div>
   );
 }

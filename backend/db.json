@@ -1,19 +1,19 @@
 {
   "users": [
     {
-      "id": 101,
+      "id": "101",
       "email": "regular@example.com",
       "password": "$2a$10$2myKMolZJoH.q.cyXClQXufY1Mc7ETKdSaQQCC6Fgtbe0DCXRBELG"
     },
     {
-      "id": 102,
+      "id": "102",
       "email": "admin@example.com",
       "password": "$2a$10$w8qB40MdYkMs3dgGGf0Pu.xxVOOzWdZ5/Nrkleo3Gqc88PF/OQhOG"
     }
   ],
   "products": [
     {
-      "id": 0,
+      "id": "0",
       "brand": "Piece of 8",
       "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, harum mollitia. Corrupti totam corporis accusamus beatae et dolorum. Molestias necessitatibus debitis explicabo optio maxime, adipisci aliquid at nesciunt odit officia.",
       "label": "tee",
@@ -24,7 +24,7 @@
       "src": ["/images/tees/t1.PNG", "/images/prints/p2.jpeg"]
     },
     {
-      "id": 1,
+      "id": "1",
       "brand": "Piece of 8",
       "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, harum mollitia. Corrupti totam corporis accusamus beatae et dolorum. Molestias necessitatibus debitis explicabo optio maxime, adipisci aliquid at nesciunt odit officia.",
       "label": "tee",
@@ -35,7 +35,7 @@
       "src": ["/images/tees/t2.PNG", "/images/prints/p2.jpeg"]
     },
     {
-      "id": 2,
+      "id": "2",
       "brand": "Piece of 8",
       "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, harum mollitia. Corrupti totam corporis accusamus beatae et dolorum. Molestias necessitatibus debitis explicabo optio maxime, adipisci aliquid at nesciunt odit officia.",
       "label": "tee",
@@ -46,7 +46,7 @@
       "src": ["/images/tees/t3.PNG"]
     },
     {
-      "id": 4,
+      "id": "4",
       "brand": "Piece of 8",
       "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, harum mollitia. Corrupti totam corporis accusamus beatae et dolorum. Molestias necessitatibus debitis explicabo optio maxime, adipisci aliquid at nesciunt odit officia.",
       "label": "tee",
@@ -57,7 +57,7 @@
       "src": ["/images/tees/t4.jpeg"]
     },
     {
-      "id": 10,
+      "id": "10",
       "brand": "Piece of 8",
       "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, harum mollitia. Corrupti totam corporis accusamus beatae et dolorum. Molestias necessitatibus debitis explicabo optio maxime, adipisci aliquid at nesciunt odit officia.",
       "label": "tee",
@@ -68,7 +68,7 @@
       "src": ["/images/tees/t5.PNG", "/images/prints/p1.jpeg"]
     },
     {
-      "id": 11,
+      "id": "11",
       "brand": "Piece of 8",
       "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, harum mollitia. Corrupti totam corporis accusamus beatae et dolorum. Molestias necessitatibus debitis explicabo optio maxime, adipisci aliquid at nesciunt odit officia.",
       "label": "jacket",
@@ -79,7 +79,7 @@
       "src": ["/images/hoodies/h1.PNG"]
     },
     {
-      "id": 12,
+      "id": "12",
       "brand": "Piece of 8",
       "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, harum mollitia. Corrupti totam corporis accusamus beatae et dolorum. Molestias necessitatibus debitis explicabo optio maxime, adipisci aliquid at nesciunt odit officia.",
       "label": "hoodie",
@@ -90,7 +90,7 @@
       "src": ["/images/hoodies/h2.PNG"]
     },
     {
-      "id": 13,
+      "id": "13",
       "brand": "Piece of 8",
       "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, harum mollitia. Corrupti totam corporis accusamus beatae et dolorum. Molestias necessitatibus debitis explicabo optio maxime, adipisci aliquid at nesciunt odit officia.",
       "label": "hoodie",

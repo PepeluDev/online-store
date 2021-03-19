@@ -66,8 +66,10 @@ function CardItem({
   sizes,
   src,
   text,
+  addToCart,
 }) {
-  const [size, setSize] = useState("default");
+  let initialSize = sizes.length > 0 ? sizes[0] : "no-size";
+  const [size, setSize] = useState(initialSize);
 
   return (
     <>
@@ -78,7 +80,7 @@ function CardItem({
             <h5 className="cards__item__text">{name}</h5>
             <p>{description}</p>
             {/* TODO currency must be selected depending on country */}
-            <span>{price} euro</span>{" "}
+            <span>{price} euro</span>
             <div className="cards__item__form">
               <form>
                 {(label === "tee" ||
@@ -90,8 +92,14 @@ function CardItem({
                   buttonSize="btn--small"
                   onClick={(e) => {
                     e.preventDefault();
-                    console.log(size);
-                    // Addd to cart will be here
+                    addToCart({
+                      id: id,
+                      amount: 1,
+                      name: name,
+                      size: size,
+                      src: src,
+                      price: price,
+                    });
                   }}
                 >
                   Add to cart
