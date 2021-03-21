@@ -37,7 +37,7 @@ class App extends Component {
     //this.setState({ user });
     let cart = localStorage.getItem("cart");
     cart = cart ? JSON.parse(cart) : {};
-    const products = await axios.get("http://localhost:3001/products");
+    const products = await axios.get("http://localhost:5001/products");
     this.setState({ products: products.data, cart });
   }
 

@@ -30,7 +30,7 @@ const productsSection = (tittle, products, addToCart) => {
                   return (
                     <CardItem
                       {...product}
-                      key={product.id}
+                      key={product._id}
                       addToCart={addToCart}
                     />
                   );
