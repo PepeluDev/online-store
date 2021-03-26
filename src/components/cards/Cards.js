@@ -29,8 +29,9 @@ const productsSection = (tittle, products, addToCart) => {
                 {chunck.map((product) => {
                   return (
                     <CardItem
-                      {...product}
                       key={product._id}
+                      id={product._id} // Mongo uses _id
+                      {...product}
                       addToCart={addToCart}
                     />
                   );
