@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const path = require("path");
 
 require("dotenv").config();
 
@@ -10,6 +11,11 @@ const port = process.env.SERVER_PORT || 5000;
 app.use(cors());
 // what body parser should do
 app.use(express.json());
+
+// link with frontend
+const frontEndBuildPath = path.join(__dirname, "..", "build");
+app.use("/", express.static(frontEndBuildPath));
+app.use("/products", express.static(frontEndBuildPath));
 
 // Mongo Connection
 const mongoUri = process.env.MONGO_ATLAS_URI;
@@ -31,11 +37,11 @@ app.use((req, res, next) => {
   next();
 });
 const productsRouter = require("./routes/products");
-app.use("/products", productsRouter);
+app.use("/v1/products", productsRouter);
 
 // Error 404, middleware function
 app.use((req, res, next) => {
-  res.status(404).send("Those are not the droids you are looking for.");
+  res.redirect(404, "/products");
 });
 
 // Error 500, middleware function
