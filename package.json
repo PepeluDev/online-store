@@ -5,6 +5,8 @@
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
+    "@paypal/checkout-server-sdk": "^1.0.2",
+    "@paypal/react-paypal-js": "^5.0.1",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.6.0",
@@ -16,6 +18,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-material-ui-carousel": "^2.2.1",
+    "react-paypal-button-v2": "^2.6.3",
     "react-query": "^3.12.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",

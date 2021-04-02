@@ -1,8 +1,7 @@
 .cart__buttons {
   margin: 5px;
   padding: 10px;
-  display: flex;
-  flex-wrap: wrap;
+  text-align: center;
 }
 
 .cart__header {

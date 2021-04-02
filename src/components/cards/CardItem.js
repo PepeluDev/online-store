@@ -92,7 +92,6 @@ function CardItem({
                   buttonSize="btn--small"
                   onClick={(e) => {
                     e.preventDefault();
-                    console.log(id + " " + size);
                     addToCart({
                       id: id,
                       amount: 1,

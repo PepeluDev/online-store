@@ -36,8 +36,12 @@ app.use((req, res, next) => {
   console.log(`${new Date().toString()} => ${req.originalUrl}`);
   next();
 });
+
+// Actual routes
 const productsRouter = require("./routes/products");
+const paymentRouer = require("./routes/payments");
 app.use("/v1/products", productsRouter);
+app.use("/v1/payments", paymentRouer);
 
 // Error 404, middleware function
 app.use((req, res, next) => {

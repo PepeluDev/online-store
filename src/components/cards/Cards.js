@@ -37,7 +37,6 @@ const productsSection = (tittle, products, addToCart) => {
                   );
                 })}
               </ul>
-              <ul className="cards__items"></ul>
             </div>
           </div>
         );

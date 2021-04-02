@@ -2,6 +2,7 @@ import React from "react";
 // Components
 import Button from "../button/Button";
 import CartItem from "./CartItem";
+import PaypalCustomButton from "../paypal/PaypalCustomButton";
 
 // style
 import "./cart.css";
@@ -43,14 +44,13 @@ function Cart(props) {
         <div className="cart__buttons">
           <Button
             buttonStyle="btn--secondary"
-            buttonSize="btn--medium"
+            buttonSize="btn--small"
             onClick={() => clearCart()}
           >
             CLEAR CART
           </Button>
-          <Button buttonStyle="btn--secondary" buttonSize="btn--medium">
-            CHECK OUT
-          </Button>
+
+          <PaypalCustomButton cartData={cartData} clearCart={clearCart} />
         </div>
       )}
     </div>
