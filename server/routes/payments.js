@@ -1,6 +1,7 @@
 const paypal = require("@paypal/checkout-server-sdk");
 const router = require("express").Router();
 let Product = require("../models/product.model");
+let Order = require("../models/order.model");
 
 // Paypal stuff
 const clientId = process.env.PAYPAL_CLIENT_ID;
@@ -34,10 +35,21 @@ const getTotalPrice = (prices, orderProducts) => {
 };
 
 const createPaypalOrder = async (paypalRequest) => {
-  // your client gets a response with the order id
   const response = await client.execute(paypalRequest);
   return { orderID: response.result.id };
 };
+
+const storeOrder = async (orderID,orderItems,res) => {
+  const orderJson = {
+    paypalOrderID: orderID,
+    orderItems: orderItems,
+  };
+
+  const newOrder = new Order(orderJson);
+  const storedOrder = await newOrder.save();
+  return storeOrder;
+};
+
 
 router.route("/paypal/createorder").post((req, res) => {
   // checking that there is a request body
@@ -45,18 +57,24 @@ router.route("/paypal/createorder").post((req, res) => {
   if (!req.body) {
     return res.status(400).send("Request Body is missing");
   }
+  const orderItems = Object.values(req.body).map( (item) => {
+    console.log(item);
+    return { productID : item.productId, name: item.name , sizes:item.sizes}
+  });
+  if(orderItems.length === 0){
+    return res.status(400).send("The cart is empty.");
+  }
 
-  const idsArray = Object.keys(req.body);
   try {
     // we need to get the actual prices from mongo DB
-    getPrices(idsArray)
+    getPrices(Object.keys(req.body))
       .then((prices) => {
         // The calculated price of the order
         const finalPrice = getTotalPrice(prices, req.body);
         // Create a request object and set parameters
-        let request = new paypal.orders.OrdersCreateRequest();
-        request.prefer("return=representation");
-        request.requestBody({
+        let paypalRequest = new paypal.orders.OrdersCreateRequest();
+        paypalRequest.prefer("return=representation");
+        paypalRequest.requestBody({
           intent: "CAPTURE",
           purchase_units: [
             {
@@ -69,9 +87,17 @@ router.route("/paypal/createorder").post((req, res) => {
           ],
         });
 
-        createPaypalOrder(request)
+        createPaypalOrder(paypalRequest)
           .then((orderID) => {
-            res.json(orderID);
+            // Store the order in database and not payed
+            storeOrder(orderID.orderID,orderItems,res).then((doc) => {
+              if (!doc || doc.length === 0) {
+                return res.status(500).send(doc);
+              }
+              return res.json(orderID);
+            })
+            .catch((err) => {
+              return res.status(500).json(err)});;
           })
           .catch((err) => {
             console.log(err);
@@ -88,6 +114,18 @@ router.route("/paypal/createorder").post((req, res) => {
   }
 });
 
+
+// Background func
+// TODO: send email
+const updateOrder = async (props) => {
+  const {email, orderID, address} = props;
+  await Order.updateOne({ paypalOrderID: orderID }, {
+    email: email,
+    payed: true,
+    address: address
+  });
+}
+
 // This will recieve the completed order
 // will check that is completed and will
 // store it in the database
@@ -95,12 +133,10 @@ router.route("/sendorder").post((req, res) => {
   if (!req.body) {
     return res.status(400).send("Request Body is missing");
   }
-
-  // TODO: The order approval must the double checked
-  console.log("The order: " + JSON.stringify(req.body));
+  // TODO: confirm the order
   // The order will need to be added to the DB
-
-  res.sendStatus(201);
+  updateOrder({email: req.body.payer.email_address,orderID:req.body.id, address: JSON.stringify(req.body.purchase_units[0].shipping)});
+  res.status(201).json({email: req.body.payer.email_address}).send();
 });
 
 module.exports = router;

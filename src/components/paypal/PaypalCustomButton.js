@@ -17,7 +17,7 @@ const orderReducer = (cartData) => {
       }
       accumulator[item.id].totalamount += item.amount;
     } else {
-      accumulator[item.id] = { name: item.name, sizes: {} };
+      accumulator[item.id] = { productId: item.id, name: item.name, sizes: {} };
       accumulator[item.id].sizes[item.size] = item.amount;
       accumulator[item.id].totalamount = item.amount;
     }
@@ -51,11 +51,13 @@ const onApprove = (data, actions, clearCart) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(details),
     };
-    alert("Thank you!");
-    return fetch("/v1/payments/sendorder", requestOptions).then((response) => {
-      clearCart();
-      return response;
-    });
+    return fetch("/v1/payments/sendorder", requestOptions)
+      .then((response) => response.json())
+      .catch((error) => alert(error))
+      .then((data) => {
+        alert("A confirmation email will be sent to: \n" + data.email);
+        clearCart();
+      });
   });
 };
 
