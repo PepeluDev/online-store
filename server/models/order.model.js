@@ -25,6 +25,7 @@ const orderSchema = new Schema(
     email: { type: String },
     address: { type: String },
     orderItems: { type: [orderItemSchema], required: true },
+    orderPrice: { type: Number, required: true },
     payed: { type: Boolean, default: false },
   },
   {

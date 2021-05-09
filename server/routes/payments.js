@@ -1,5 +1,6 @@
 const paypal = require("@paypal/checkout-server-sdk");
 const router = require("express").Router();
+var EmailCtrl = require("../utils/emailer");
 let Product = require("../models/product.model");
 let Order = require("../models/order.model");
 
@@ -39,10 +40,11 @@ const createPaypalOrder = async (paypalRequest) => {
   return { orderID: response.result.id };
 };
 
-const storeOrder = async (orderID,orderItems,res) => {
+const storeOrder = async (orderID, orderItems, orderPrice, res) => {
   const orderJson = {
     paypalOrderID: orderID,
     orderItems: orderItems,
+    orderPrice: orderPrice,
   };
 
   const newOrder = new Order(orderJson);
@@ -90,14 +92,16 @@ router.route("/paypal/createorder").post((req, res) => {
         createPaypalOrder(paypalRequest)
           .then((orderID) => {
             // Store the order in database and not payed
-            storeOrder(orderID.orderID,orderItems,res).then((doc) => {
-              if (!doc || doc.length === 0) {
-                return res.status(500).send(doc);
-              }
-              return res.json(orderID);
-            })
-            .catch((err) => {
-              return res.status(500).json(err)});;
+            storeOrder(orderID.orderID, orderItems, finalPrice, res)
+              .then((doc) => {
+                if (!doc || doc.length === 0) {
+                  return res.status(500).send(doc);
+                }
+                return res.json(orderID);
+              })
+              .catch((err) => {
+                return res.status(500).json(err);
+              });
           })
           .catch((err) => {
             console.log(err);
@@ -114,15 +118,21 @@ router.route("/paypal/createorder").post((req, res) => {
   }
 });
 
-
-// Background func
-// TODO: send email
 const updateOrder = async (props) => {
-  const {email, orderID, address} = props;
-  await Order.updateOne({ paypalOrderID: orderID }, {
-    email: email,
-    payed: true,
-    address: address
+  const { email, orderID, address } = props;
+  await Order.updateOne(
+    { paypalOrderID: orderID },
+    {
+      email: email,
+      payed: true,
+      address: address,
+    }
+  );
+
+  // TODO:
+  // - Send a transcription of the order in html bill
+  Order.findOne({ paypalOrderID: orderID }).then((order) => {
+    EmailCtrl.sendEmail(email, JSON.stringify(order));
   });
 }
 
