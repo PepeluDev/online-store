@@ -6,6 +6,7 @@ import axios from "axios";
 // components
 import CartIcon from "./components/cart/CartIcon";
 import CartDrawer from "./components/cart/CartDrawer";
+import CookieConsent from "react-cookie-consent";
 import Error from "./components/Error";
 import Footer from "./components/footer/Footer";
 import Home from "./components/pages/Home";
@@ -104,6 +105,7 @@ class App extends Component {
             <Route path="*" component={Error} />
           </Switch>
           <Footer />
+          <CookieConsent>This website doesn't use Cookies.</CookieConsent>
         </Router>
       </Context.Provider>
     );
