@@ -132,7 +132,7 @@ const updateOrder = async (props) => {
   // TODO:
   // - Send a transcription of the order in html bill
   Order.findOne({ paypalOrderID: orderID }).then((order) => {
-    EmailCtrl.sendEmail(email, JSON.stringify(order));
+    EmailCtrl.sendOrderEmail(email, order);
   });
 }
 
@@ -145,7 +145,11 @@ router.route("/sendorder").post((req, res) => {
   }
   // TODO: confirm the order
   // The order will need to be added to the DB
-  updateOrder({email: req.body.payer.email_address,orderID:req.body.id, address: JSON.stringify(req.body.purchase_units[0].shipping)});
+  updateOrder({
+    email: req.body.payer.email_address,
+    orderID: req.body.id,
+    address: req.body.purchase_units[0].shipping,
+  });
   res.status(201).json({email: req.body.payer.email_address}).send();
 });
 

@@ -23,7 +23,7 @@ const orderSchema = new Schema(
   {
     paypalOrderID: { type: String, required: true },
     email: { type: String },
-    address: { type: String },
+    address: { type: Object },
     orderItems: { type: [orderItemSchema], required: true },
     orderPrice: { type: Number, required: true },
     payed: { type: Boolean, default: false },
