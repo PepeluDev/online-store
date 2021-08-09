@@ -11,7 +11,7 @@ import Error from "./components/Error";
 import Footer from "./components/footer/Footer";
 import Home from "./components/pages/Home";
 import LoginComponent from "./components/authentication/Login";
-import Navbar from "./components/navbar/Navbar";
+import NavbarComponent from "./components/navbar/Navbar";
 import Products from "./components/pages/Products";
 // context
 import Context from "./context/Context";
@@ -19,7 +19,9 @@ import withContext from "./context/withContext";
 // components that need context for component injection
 import { AllCards, TopCards } from "./components/cards/Cards";
 
+// Styles
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css"; // disables button styles
 
 class App extends Component {
   constructor(props) {
@@ -87,7 +89,7 @@ class App extends Component {
         }}
       >
         <Router>
-          <Navbar
+          <NavbarComponent
             CartDrawer={withContext(CartDrawer)}
             CartIcon={withContext(CartIcon)}
           />
