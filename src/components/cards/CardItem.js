@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import Button from "../button/Button";
 
 import Carousel from "react-material-ui-carousel";
-import Popup from "reactjs-popup";
+
+import { Card } from "react-bootstrap";
 
 function sizeSelector(availableSizes, onChange) {
   return (
     <select
+      style={{ margin: "6px" }}
       name="sizes"
       onChange={(e) => {
         e.preventDefault();
@@ -25,19 +27,7 @@ function sizeSelector(availableSizes, onChange) {
 }
 
 function ProductFigure({ src, label }) {
-  return (
-    <figure className="cards__item__pic-wrap" data-category={label}>
-      <Popup
-        modal
-        closeOnDocumentClick
-        trigger={
-          <img src={src} alt="SOME_IMAGE" className="cards__item__img" />
-        }
-      >
-        <img src={src} alt="SOME_IMAGE" className="cards__item__img__popup" />
-      </Popup>
-    </figure>
-  );
+  return <Card.Img variant="top" src={src} style={{ borderRadius: "20px" }} />;
 }
 
 function ProductCarousel({ picsSrc, label }) {
@@ -70,46 +60,50 @@ function CardItem({
 }) {
   let initialSize = sizes.length > 0 ? sizes[0] : "no-size";
   const [size, setSize] = useState(initialSize);
-
   return (
     <>
-      <li className="cards__item">
-        <div className="cards__item__link">
-          <ProductCarousel picsSrc={src} label={label} />
-          <div className="cards__item__info">
-            <h5 className="cards__item__text">{name}</h5>
-            <p>{description}</p>
-            {/* TODO currency must be selected depending on country */}
-            <span>{price} euro</span>
-            <div className="cards__item__form">
-              <form>
-                {(label === "tee" ||
-                  label === "hoodie" ||
-                  label === "jacket") &&
-                  sizeSelector(sizes, setSize)}
-                <Button
-                  buttonStyle="btn--secondary"
-                  buttonSize="btn--small"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    addToCart({
-                      id: id,
-                      amount: 1,
-                      name: name,
-                      size: size,
-                      src: src,
-                      price: price,
-                    });
-                    setSize(initialSize);
-                  }}
-                >
-                  Add to cart
-                </Button>
-              </form>
-            </div>
+      <Card
+        style={{
+          border: "solid",
+          borderRadius: "10px",
+          margin: "10px",
+          borderColor: "lightGray",
+        }}
+      >
+        <ProductCarousel picsSrc={src} label={label} />
+        <Card.Body>
+          <Card.Title>{name}</Card.Title>
+          <Card.Text>{description}</Card.Text>
+        </Card.Body>
+
+        <Card.Footer style={{ borderRadius: "10px", textAlign: "center" }}>
+          <span>{price} euro</span>
+          <div className="cards__item__form">
+            <form>
+              {(label === "tee" || label === "hoodie" || label === "jacket") &&
+                sizeSelector(sizes, setSize)}
+              <Button
+                buttonStyle="btn--secondary"
+                buttonSize="btn--small"
+                onClick={(e) => {
+                  e.preventDefault();
+                  addToCart({
+                    id: id,
+                    amount: 1,
+                    name: name,
+                    size: size,
+                    src: src,
+                    price: price,
+                  });
+                  setSize(initialSize);
+                }}
+              >
+                Add to cart
+              </Button>
+            </form>
           </div>
-        </div>
-      </li>
+        </Card.Footer>
+      </Card>
     </>
   );
 }

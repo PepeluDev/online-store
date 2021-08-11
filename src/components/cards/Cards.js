@@ -1,7 +1,6 @@
 import React from "react";
 import CardItem from "./CardItem";
-
-import "./Cards.css";
+import { Container, CardGroup } from "react-bootstrap";
 
 function chunkArray(myArray, chunk_size) {
   var index = 0;
@@ -18,30 +17,26 @@ function chunkArray(myArray, chunk_size) {
 
 const productsSection = (tittle, products, addToCart) => {
   return (
-    <>
-      <h1>{tittle}</h1>
-      {products.map((chunck) => {
-        let id = 1;
-        return (
-          <div key={id++} className="cards__container">
-            <div className="cards__wrapper">
-              <ul className="cards__items">
-                {chunck.map((product) => {
-                  return (
-                    <CardItem
-                      key={product._id}
-                      id={product._id} // Mongo uses _id
-                      {...product}
-                      addToCart={addToCart}
-                    />
-                  );
-                })}
-              </ul>
-            </div>
-          </div>
-        );
-      })}
-    </>
+        <Container style={{marginTop:"10px"}}>
+        <h1 style={{textAlign:"center", fontFamily: "Courier New, Courier, monospace" }} >{tittle}</h1>
+          {products.map((chunck) => {
+            let id = 1;
+            return (
+              <CardGroup xs={1} md={3} className="g-4" key={id++}>
+                    {chunck.map((product) => {
+                      return (
+                            <CardItem
+                              key={product._id}
+                              id={product._id} // Mongo uses _id
+                              {...product}
+                              addToCart={addToCart}
+                            />
+                      );
+                    })}
+            </CardGroup>
+            );
+          })}
+      </Container>
   );
 };
 
@@ -58,7 +53,7 @@ export function TopCards(props) {
   return (
     <div className="cards">
       {productsSection(
-        "Lucifer’s choice",
+        "Latest releases",
         [[tees[0], tees[2], tees[1]]],
         addToCart
       )}
@@ -83,8 +78,8 @@ export function AllCards(props) {
 
   return (
     <div className="cards">
-      {productsSection("Check out these cool tees!", tees, addToCart)}
-      {productsSection("Check out these cool hoodies!", hoodies, addToCart)}
+      {productsSection("Our Tees", tees, addToCart)}
+      {productsSection("Our Hoodies", hoodies, addToCart)}
     </div>
   );
 }
