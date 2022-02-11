@@ -1,3 +1,3 @@
-# Simple Online Store
+# Online-Store REACT & NODEJS
 
-This is the prototype of a simple web store created by José Luis López Bellido.
+A web store developed as a personal project to learn REACT and NODEJS.
