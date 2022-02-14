@@ -1,7 +1,9 @@
 # Online-Store REACT & NODEJS
 
 A prototype for an ecommerce web application developed as a personal project to learn
-REACT and NODEJS. It is **NOT maintained** anymore and currently it's kept to gather the
+REACT and NODEJS.
+
+It is **NOT MAINTAINED** anymore and currently it's kept to gather the
 knowledge and future reference.
 
 ## Main features and functionalities
@@ -48,3 +50,19 @@ you will have to provide your owns.
 [product list example]: /server/testUtilities/testJsonproduct.txt
 [Nodemailer]: https://nodemailer.com/about/
 [.env]: /.env
+
+## TO-DOs an enhancements
+
+In this section i will be gathering the enhancements that could be done in order to have
+a functional and secure state of the art ecommerce software.
+
+Fucntional enhancements:
+* Authentication for client and seller
+* Seller dashboard
+* Cookie management
+* Fine error handling
+* Fix email format
+
+Operational enhancements:
+* Docker image
+* AWS deployment: Using ECS and cloudformation (or AWS CDK)
