@@ -6,6 +6,14 @@ REACT and NODEJS.
 It is **NOT MAINTAINED** anymore and currently it's kept to gather the
 knowledge and future reference.
 
+## Online-Store Showcase
+
+![showcase](/docs/images/showcase.gif "showcase")
+
+### Designs and images
+
+Every image and design used in this repository is **private property** and cannot be used by a third party with lucrative purposes.
+
 ## Main features and functionalities
 
 A part from the responsive view that works for almost any of the most common
