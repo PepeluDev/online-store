@@ -33,11 +33,13 @@ architecture. It relies in 3 other components to be able to fulfil its purpose.
 
 ![online-store architecture](/docs/images/online-store-architecture-diagram.png "online-store architecture")
 
-* Database (MongoDB): The system was developed using a Mongo atlas testing database to store the proucts
+* Database (MongoDB): The system was developed using a Mongo atlas testing database to store the products
 information. The connection string must be present in the "MONGO_ATLAS_URI" env var when starting
 the server. The [product schema] and a [product list example] can be found in the server directory.
-The example can be used with the server route "/products/addmany" to populate the database. Currently
-this route code is commented because no security was added to the server.
+Please take into account that the product images are private files that I added in my local version of
+the repo, you will have to provide your owns. The example json can be used with the server route "/products/addmany"
+to populate the database, see the first [curl example], currently this route code is commented because no security
+was added to the server.
 
 * Payment service (Paypal): Using the paypal sandbox we can set an testing environment where every transaction is
 isolated and takes place without using real money, of course. Since the website doesn't require the
@@ -55,7 +57,8 @@ version of the repo and the content that it has before (password and secrets) is
 you will have to provide your owns.
 
 [product schema]: /server/models/product.model.js
-[product list example]: /server/testUtilities/testJsonproduct.txt
+[product list example]: /server/testUtilities/testJsonProduct.txt
+[curl example]: /server/testUtilities/curl.txt
 [Nodemailer]: https://nodemailer.com/about/
 [.env]: /.env
 
