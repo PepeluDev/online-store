@@ -18,7 +18,7 @@ software:
 * Paypal checkout
 * Confirmation emails
 
-## Architectural Dependencies and details
+## Architectural dependencies and details
 
 This web application is prepared to work as the central part of an eccommerce microservice
 architecture. It relies in 3 other components to be able to fulfil its purpose.
@@ -50,6 +50,30 @@ you will have to provide your owns.
 [product list example]: /server/testUtilities/testJsonproduct.txt
 [Nodemailer]: https://nodemailer.com/about/
 [.env]: /.env
+
+## How to use it
+
+This project includes both the frontend (REACT) and the backend (NODEJS). In order to run
+the project take a look to the [package.json] and see the scripts section to know how to
+run the client (frontend), the server or both.
+
+Remember that is a **mandatory** requirement to have **node** and **npm** both installed in your machine.
+Once we have a proper DOCKERFILE to build a development image those requirements won't be needed.
+
+[package.json]: /package.json
+
+### Starting frontend and backend in development mode
+
+First of all make sure you understand the [Architectural dependencies and details](#architectural-dependencies-and-details)
+section and set the needed environment variables to access mongoDB, the payment service and the email server. Later with
+the fresh cloned repo, you can run:
+
+```shell
+$ npm install
+$ npm run dev
+```
+
+Or you can also use yarn if you fancy ;)
 
 ## TO-DOs an enhancements
 
