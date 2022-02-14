@@ -86,7 +86,7 @@ $ npm run dev
 
 Or you can also use yarn if you fancy ;)
 
-## TO-DOs an enhancements
+## TO-DOs and enhancements
 
 In this section i will be gathering the enhancements that could be done in order to have
 a functional and secure state of the art ecommerce software.
